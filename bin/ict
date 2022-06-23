@@ -1,0 +1,6 @@
+#!/bin/bash
+
+script="$(readlink -e "$BASH_SOURCE")"
+base_dir="$(dirname "$(dirname "$script")")"
+export PYTHONPATH="$base_dir:$PYTHONPATH"
+python3 -m ict "$@"
